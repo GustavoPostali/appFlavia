@@ -10,6 +10,7 @@ import { ReportsPage } from '../pages/reports/reports';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 import { FormPage } from '../pages/form/form';
+import { MyReportsPage } from '../pages/my-reports/my-reports';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -25,7 +26,8 @@ import { UserDataProvider } from '../providers/user-data/user-data';
     ReportsPage,
     LoginPage,
     TabsPage,
-    FormPage
+    FormPage,
+    MyReportsPage
   ],
   imports: [
     BrowserModule,
@@ -40,7 +42,8 @@ import { UserDataProvider } from '../providers/user-data/user-data';
     ReportsPage,
     LoginPage,
     TabsPage,
-    FormPage
+    FormPage,
+    MyReportsPage
   ],
   providers: [
     StatusBar,
