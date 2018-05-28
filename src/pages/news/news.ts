@@ -39,7 +39,7 @@ export class NewsPage {
         buttons : [{
           text : 'Ok',
           handler : () => {
-            let navTransition = alert.dismiss();
+            alert.dismiss();
           }
         }]
       })

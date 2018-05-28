@@ -37,7 +37,7 @@ export class FormPage {
         buttons : [{
           text : 'Ok',
           handler : () => {
-            let navTransition = alert.dismiss();
+            alert.dismiss();
           }
         }]
       })
