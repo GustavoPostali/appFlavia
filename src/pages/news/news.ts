@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 
 import { HttpParams, HttpHeaders, HttpClient } from '@angular/common/http';
 
@@ -14,7 +14,7 @@ export class NewsPage {
   headers: any;
   count = 1;
 
-  constructor(public navCtrl: NavController, private http: HttpClient) {
+  constructor(public navCtrl: NavController, private http: HttpClient, public alertCtrl : AlertController) {
     this.params = new HttpParams()
     this.headers = new HttpHeaders().set('Content-Type','application/json');
 
@@ -33,7 +33,17 @@ export class NewsPage {
     .subscribe(res => {
       this.news.push(res[0]);
     }), err => {
-      console.log(err);
+      let alert = this.alertCtrl.create({
+        title : 'Problema de conexão',
+        subTitle : 'Verifique a conexão com a internet e tente novamente',
+        buttons : [{
+          text : 'Ok',
+          handler : () => {
+            let navTransition = alert.dismiss();
+          }
+        }]
+      })
+      alert.present();
     }
     this.count = this.count + 1;
   }
